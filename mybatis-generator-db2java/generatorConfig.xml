@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="context1" targetRuntime="MyBatis3">
+		<property name="javaFileEncoding" value="UTF-8"/>
+		<commentGenerator type="org.mybatis.generator.MyCommentGenerator">
+		</commentGenerator>
+		 <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://ip:3306/dbname" userId="root"
+                        password="xxxxxxx">
+        </jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:生成PO类的位置 -->
+       <!-- <javaModelGenerator targetPackage="com.xxx.dao.domain2"
+                            targetProject="F:/workspace/gitlabSpace/xxx-micro/dao/src/main/java">-->
+        <javaModelGenerator targetPackage="com.xxx.dao.domain2"
+                            targetProject="F:/workspace2/java">
+                            
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+		<!-- targetProject:mapper映射文件生成的位置
+           如果maven工程只是单独的一个工程，targetProject="src/main/java"
+           若果maven工程是分模块的工程，targetProject="所属模块的名称"，例如：
+           targetProject="ecps-manager-mapper"，下同-->
+       <!--  <sqlMapGenerator targetPackage="mapper2"
+                         targetProject="F:/workspace/gitlabSpace/xxx-micro/dao/src/main/resources">-->
+        <sqlMapGenerator targetPackage="mapper2"
+                         targetProject="F:/workspace2/resources">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+		<!-- targetPackage：mapper接口生成的位置 -->
+       <!-- <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.xxx.dao.mapper2"
+                             targetProject="F:/workspace/gitlabSpace/xxx-micro/dao/src/main/java">-->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.xxx.dao.mapper2"
+                             targetProject="F:/workspace2/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+
+		<!--不生成帮助类（Exmaples） -->
+		<!-- enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+			enableSelectByExample="false" selectByExampleQueryId="false" -->
+		<!--已生成的表 <table schema="demo" tableName="USER" domainObjectName="User"></table> -->
+		<table schema="mysql" tableName="t_auth_apply" domainObjectName="AuthApply"
+			enableCountByExample="true" enableUpdateByExample="true"
+			enableDeleteByExample="true" enableSelectByExample="true"
+			selectByExampleQueryId="true">
+		</table>
+
+	</context>
+</generatorConfiguration>
+
