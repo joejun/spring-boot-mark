@@ -1,6 +1,6 @@
-#Swaggr集成 + Restful规范整理
+# Swaggr集成 + Restful规范整理
 
-##Swagger是当前最好用的Restful API文档生成的开源项目  
+## Swagger是当前最好用的Restful API文档生成的开源项目  
 测试spring restful风格的接口功能。
 官方网站为：http://swagger.io/  
 ### ApiImplicitParam 与 ApiParam 的区别  
@@ -9,8 +9,8 @@
     但是需要提供具体的属性才能配合swagger ui解析使用。
 * ApiParam只需要较少的属性，与swagger ui配合更好。    
 
-##Restful规范整理：  
-###请求方法  
+## Restful规范整理：  
+### 请求方法  
 GET（SELECT）：从服务器取出资源（一项或多项,一项时一般在路径中包含唯一ID，多项时资源用复数）。
 POST（CREATE）：在服务器新建一个资源。
 PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。
